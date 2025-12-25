@@ -9,11 +9,21 @@ const app = express();
 await connectDB();
 
 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://shortlyurl-murex.vercel.app"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
 
-app.use(cors())
-app.use(express.json())
+// ✅ Handle preflight explicitly
+app.options("*", cors());
 
-app.use('/', (req, res) => res.send('Server is Live!'))
+app.use(express.json());
+
+app.get('/', (req, res) => res.send('Server is Live!'))
 app.use('/link', linkRouter)
 
 
