@@ -13,7 +13,7 @@ await connectDB();
 app.use(cors())
 app.use(express.json())
 
-// app.use('/', (req, res) => res.send('Server is Live!'))
+app.use('/', (req, res) => res.send('Server is Live!'))
 app.use('/link', linkRouter)
 
 
