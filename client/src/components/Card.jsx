@@ -31,10 +31,10 @@ const Card = () => {
             <div className=' flex justify-center text-4xl text-[#22223B] opacity-70'>
               Your Short URL is:
             </div>
-            <div className='flex justify-center text-xl pl-4 border-2 rounded-2xl h-15'>
-              <span className='flex relative items-center justify-center gap-3 h-full'>
-                {shortURL}
-                <button title='Copy This URL' onClick={handleCopy} className='bg-[#22223B] text-white h-full w-full px-4  rounded-r-xl cursor-pointer'>
+            <div className='flex justify-center text-xl border-2 rounded-2xl h-15'>
+              <span className='flex relative pl-4 items-center justify-between gap-3 h-full'>
+                <span className='w-80 overflow-hidden'>{shortURL}</span>
+                <button title='Copy This URL' onClick={handleCopy} className='bg-[#22223B] text-white h-full px-4  rounded-r-xl cursor-pointer'>
                   <img className='h-5 pointer-events-none select-none' src={assets.copy} alt="copy" />
                 </button>
               </span>

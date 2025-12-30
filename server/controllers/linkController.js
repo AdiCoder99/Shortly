@@ -34,7 +34,7 @@ const shrunkURL = async (req, res) => {
         } while (duplicate);
 
         await Link.create({ link, shortCode })
-        let uRL = `${process.env.BASE_URL}/link/${shortCode}`
+        let uRL = `${process.env.BASE_URL}/link/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa${shortCode}`
         res.json({ success: true, uRL: uRL })
     }
     catch (error) {
